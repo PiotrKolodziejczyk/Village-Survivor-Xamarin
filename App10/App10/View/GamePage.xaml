@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.GamePage"
+             NavigationPage.HasNavigationBar="false"
+             
+          >
+   
+
+
+
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <StackLayout BackgroundColor="Beige">
+                <Button Text="Back to Menu" Command="{Binding BackToMenu}"></Button>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding NameStackLayout}" BackgroundColor="Beige" >
+                <Entry Text="{Binding Nick}" Placeholder="Write your name"></Entry>
+                <Button Text="Start Game" Command="{Binding StartGameCommand}"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+                <Label Text="Time" ></Label>
+                <Label Text="{Binding Time}"></Label>
+
+                <Label Text="Food :"></Label>
+                <Label Text="{Binding Food}" ></Label>
+            </StackLayout >
+            <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+                <Label Text="Wood :"></Label>
+                <Label Text="{Binding Wood.Count}"></Label>
+                <Label Text="Stone :"></Label>
+                <Label Text="{Binding Stone.Count}"></Label>
+                <Label Text="Steel :"></Label>
+                <Label Text="{Binding Steel.Count}"></Label>
+                <Label Text="Gold :"></Label>
+                <Label Text="{Binding Gold.Count}"></Label>
+            </StackLayout>
+            <ScrollView IsVisible="{Binding ScrollViewVisible}">
+                
+                <Grid >
+                    <Grid.ColumnDefinitions>
+    
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding Wood.ImageUrl}"  Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Wood.Name}" Grid.Column="1"></Label>
+                    <Label Text="{Binding Wood.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="1"></Label>
+                    <Label Text="1 lvl Axe ++ 1 Wood More" Grid.Column="2" Grid.Row="1"></Label>
+                    <Button IsVisible="{Binding Wood.IsVisible}" Command="{Binding Wood.ItemCommand}" Text="{Binding Axe.Count,StringFormat='Collect {0}'}" Grid.Column="2" ></Button>
+                   
+
+
+                    <Image Source="{Binding Stone.ImageUrl}" Grid.Row="2" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Stone.Name}" Grid.Row="2" Grid.Column="1"></Label>
+                    <Label Text="{Binding Stone.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="3"></Label>
+                    <Label Text="1 lvl Pick ++ 1 Stone More" Grid.Column="2" Grid.Row="3"></Label>
+                    <Button IsVisible="{Binding Stone.IsVisible}" Command="{Binding Stone.ItemCommand}" Text="{Binding Pick.Count,StringFormat='Collect {0}'}" Grid.Row="2" Grid.Column="2" ></Button>
+
+
+                    <Image Source="{Binding Steel.ImageUrl}" Grid.Row="4" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Steel.Name}" Grid.Row="4" Grid.Column="1"></Label>
+                    <Label Text="{Binding Steel.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="5"></Label>
+                    <Label Text="1 lvl Hammer ++ 1 Steel More" Grid.Column="2" Grid.Row="5"></Label>
+                    <Button IsVisible="{Binding Steel.IsVisible}" Command="{Binding Steel.ItemCommand}" Text="{Binding Hammer.Count,StringFormat='Collect {0}'}" Grid.Row="4" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Gold.ImageUrl}" Grid.Row="6" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Gold.Name}" Grid.Row="6" Grid.Column="1"></Label>
+                    <Label Text="{Binding Gold.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="7"></Label>
+                    <Label Text="1 lvl Sieve ++ 1 Gold More" Grid.Column="2" Grid.Row="7"></Label>
+                    <Button IsVisible="{Binding Gold.IsVisible}" Command="{Binding Gold.ItemCommand}" Text="{Binding Sieve.Count,StringFormat='Collect {0}'}" Grid.Row="6" Grid.Column="2"></Button>
+
+                    <Image  Source="{Binding Field.ImageUrl}" Grid.Row="8" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Field.Name}" Grid.Row="8" Grid.Column="1"></Label>
+                    <Label Text="{Binding Field.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="9"></Label>
+                    <Label Text="1 lvl Peasant = 1 Food More" Grid.Column="2" Grid.Row="9"></Label>
+                    <Button IsVisible="{Binding Field.IsVisible}" Command="{Binding Field.ItemCommand}" Text="{Binding Peasant.Count,StringFormat='Collect {0}'}" Grid.Row="8" Grid.Column="2"></Button>
+
+                    <Image  Source="{Binding Axe.ImageUrl}" Grid.Row="10" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Axe.Name}" Grid.Row="10" Grid.Column="1"></Label>
+                    <Label Text="{Binding Axe.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="11"></Label>
+                    <Label Grid.Column="2" Grid.Row="11" Text="5 Wood : 1 Steel"></Label>
+                    <Button IsVisible="{Binding Axe.IsVisible}" Command="{Binding Axe.ItemCommand}" Text="{Binding Axe.Count,StringFormat='Level Up {0}'}" Grid.Row="10" Grid.Column="2" ></Button>
+
+                    <Image Source="{Binding Hammer.ImageUrl}" Grid.Row="12" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Hammer.Name}" Grid.Row="12" Grid.Column="1"></Label>
+                    <Label Text="{Binding Hammer.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="13"></Label>
+                    <Label Text="10 Wood : 3 Steel" Grid.Column="2" Grid.Row="13"></Label>
+                    <Button IsVisible="{Binding Hammer.IsVisible}" Command="{Binding Hammer.ItemCommand}" Text="{Binding Hammer.Count,StringFormat='Level Up {0}'}" Grid.Row="12" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Pick.ImageUrl}" Grid.Row="14" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Pick.Name}" Grid.Row="14" Grid.Column="1"></Label>
+                    <Label Text="{Binding Pick.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="15"></Label>
+                    <Label Text="7 Wood : 2 Steel" Grid.Column="2" Grid.Row="15"></Label>
+                    <Button IsVisible="{Binding Pick.IsVisible}" Command="{Binding Pick.ItemCommand}" Text="{Binding Pick.Count,StringFormat='Level Up {0}'}" Grid.Row="14" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Peasant.ImageUrl}" Grid.Row="16" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Peasant.Name}" Grid.Row="16" Grid.Column="1"></Label>
+                    <Label Text="{Binding Peasant.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="17"></Label>
+                    <Label Text="10 Wood : 10 Steel" Grid.Column="2" Grid.Row="17"></Label>
+                    <Button IsVisible="{Binding Peasant.IsVisible}" Command="{Binding Peasant.ItemCommand}" Text="{Binding Peasant.Count,StringFormat='Level Up {0}'}" Grid.Row="16" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Sieve.ImageUrl}" Grid.Row="18" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Sieve.Name}" Grid.Row="18" Grid.Column="1"></Label>
+                    <Label Text="{Binding Sieve.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="19"></Label>
+                    <Label Text="20 Stone : 10 Steel" Grid.Column="2" Grid.Row="19"></Label>
+                    <Button IsVisible="{Binding Sieve.IsVisible}" Command="{Binding Sieve.ItemCommand}" Text="{Binding Sieve.Count,StringFormat='Level Up {0}'}" Grid.Row="18" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Butcher.ImageUrl}" Grid.Row="20" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Butcher.Name}" Grid.Row="20" Grid.Column="1"></Label>
+                    <Label Text="{Binding Butcher.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="21"></Label>
+                    <Label Text="12 Stone : 5 Gold" Grid.Column="2" Grid.Row="21"></Label>
+                    <Button IsVisible="{Binding Butcher.IsVisible}" Command="{Binding Butcher.ItemCommand}" Text="{Binding Butcher.Count,StringFormat='Level Up {0}'}" Grid.Row="20" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Sausage.ImageUrl}" Grid.Row="22" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Sausage.Name}" Grid.Row="22" Grid.Column="1"></Label>
+                    <Label Text="{Binding Sausage.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="23"></Label>
+                    <Label Text="1 lvl Butcher = 1 Food More" Grid.Column="2" Grid.Row="23"></Label>
+                    <Button IsVisible="{Binding Sausage.IsVisible}" Command="{Binding Sausage.ItemCommand}" Text="{Binding Butcher.Count,StringFormat='Collect {0}'}" Grid.Row="22" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Bakery.ImageUrl}" Grid.Row="24" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Bakery.Name}" Grid.Row="24" Grid.Column="1"></Label>
+                    <Label Text="{Binding Bakery.Time,StringFormat=' {0} seconds'}" Grid.Column="1"  Grid.Row="25"></Label>
+                    <Label Text="15 Stone : 10 Gold " Grid.Column="2" Grid.Row="25"></Label>
+                    <Button IsVisible="{Binding Bakery.IsVisible}" Command="{Binding Bakery.ItemCommand}" Text="{Binding Bakery.Count,StringFormat='Level Up {0}'}" Grid.Row="24" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Bread.ImageUrl}" Grid.Row="26" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Bread.Name}" Grid.Row="26" Grid.Column="1"></Label>
+                    <Label Text="{Binding Bread.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="27"></Label>
+                    <Label Text="1 lvl Bakery  = 1 Food More" Grid.Column="2" Grid.Row="27"></Label>
+                    <Button IsVisible="{Binding Bread.IsVisible}" Command="{Binding Bread.ItemCommand}" Text="{Binding Bakery.Count,StringFormat='Collect {0}'}" Grid.Row="26" Grid.Column="2"></Button>
+
+                    <Image Source="{Binding Orchard.ImageUrl}" Grid.Row="28" Grid.RowSpan="2"></Image>
+                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Orchard.Name}" Grid.Row="28" Grid.Column="1"></Label>
+                    <Label Text="{Binding Orchard.Time,StringFormat=' {0} seconds'}" Grid.Column="1" Grid.Row="29"></Label>
+                    <Label Text="10 Wood" Grid.Column="2" Grid.Row="29"></Label>
+                    <Button IsVisible="{Binding Orchard.IsVisible}" Command="{Binding Orchard.ItemCommand}" Text="Collect 10" Grid.Row="28" Grid.Column="2"></Button>
+
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
